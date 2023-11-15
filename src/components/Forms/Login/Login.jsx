@@ -48,23 +48,31 @@ export const Login = () =>{
                 {(email.isDirty && email.minLength) && <div style={{color:"rgba(255, 3, 3, 0.85)", fontWeight:"bold", textShadow:"0px 1px 1px #8a3749"}}>Email слишком короткий</div>}
                 {(email.isDirty && email.emailError) && <div style={{color:"rgba(255, 3, 3, 0.85)", fontWeight:"bold", textShadow:"0px 1px 1px #8a3749"}}>Это не эллектронная почта</div>}
 
-                <input
-                    onChange={e => email.onChange(e)}
-                    onBlur={e => email.onBlur(e)}
-                    value={email.value}
-                    type="text"
-                    placeholder="Эллектронная почта"
-                />
+                <div>
+                    <label htmlFor="email" className="fa-solid fa-envelope"></label>
+                    <input
+                        onChange={e => email.onChange(e)}
+                        onBlur={e => email.onBlur(e)}
+                        value={email.value}
+                        type="text"
+                        name="email"
+                        placeholder="Эллектронная почта"
+                    />
+                </div>
 
 
                 {(password.isDirty && password.emptyInput) && <div style={{color:"rgba(255, 3, 3, 0.85)", fontWeight:"bold", textShadow:"0px 1px 1px #8a3749"}}>Поле не может быть пустым</div>}
-                <input
-                    onChange={e => password.onChange(e)}
-                    onBlur={e => password.onBlur(e)}
-                    type="password"
-                    placeholder="Пароль"
-                />
 
+                <div>
+                    <label htmlFor="password" className="fa-solid fa-lock"></label>
+                    <input
+                        onChange={e => password.onChange(e)}
+                        onBlur={e => password.onBlur(e)}
+                        type="password"
+                        name="password"
+                        placeholder="Пароль"
+                    />
+                </div>
                 <button disabled={!email.inputValid || ! password.inputValid} type="submit">Авторизоваться</button>
 
             </form>
