@@ -91,11 +91,17 @@ body{
     .login-form{
         max-width: 400px;
     }
+    .login-form form div{
+        text-align: center;
+    }
 }
 
 @media screen and (max-width: 650px) {
     .login-form{
         max-width: 300px;
+    }
+    .login-form form div{
+        text-align: center;
     }
 }
 
@@ -109,5 +115,8 @@ body{
     .login-form input::placeholder{
         max-width: 100px;
         font-size: 9px;
+    }
+    .login-form form div{
+        text-align: center;
     }
 }
