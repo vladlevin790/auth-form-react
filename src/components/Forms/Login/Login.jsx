@@ -44,9 +44,13 @@ export const Login = () =>{
 
                 <h2>Авторизация</h2>
 
-                {(email.isDirty && email.emptyInput) && <div style={{color:"rgba(255, 3, 3, 0.85)", fontWeight:"bold", textShadow:"0px 1px 1px #8a3749"}}>Поле не может быть пустым</div>}
-                {(email.isDirty && email.minLength) && <div style={{color:"rgba(255, 3, 3, 0.85)", fontWeight:"bold", textShadow:"0px 1px 1px #8a3749"}}>Email слишком короткий</div>}
-                {(email.isDirty && email.emailError) && <div style={{color:"rgba(255, 3, 3, 0.85)", fontWeight:"bold", textShadow:"0px 1px 1px #8a3749"}}>Это не эллектронная почта</div>}
+                {email.isDirty && (
+                    <div style={{ color: "rgba(255, 3, 3, 0.85)", fontWeight: "bold", textShadow: "0px 1px 1px #8a3749" }}>
+                        {email.emptyInput && "Поле не может быть пустым"}
+                        {!email.emptyInput && email.minLength && "Email слишком короткий"}
+                        {!email.emptyInput && !email.minLength && email.emailError && "Это не электронная почта"}
+                    </div>
+                )}
 
                 <div>
                     <label htmlFor="email" className="fa-solid fa-envelope"></label>
