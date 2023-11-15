@@ -77,7 +77,7 @@ export const Login = () =>{
                         placeholder="Пароль"
                     />
                 </div>
-                <button disabled={!email.inputValid || ! password.inputValid} type="submit">Авторизоваться</button>
+                <button disabled={!email.inputValid || !password.inputValid} type="submit">Авторизоваться</button>
 
             </form>
         </div>
